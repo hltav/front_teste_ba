@@ -1,0 +1,26 @@
+<div>
+<h2>Lista de Usuários</h2>
+
+<table>
+   <thead>
+      <tr>
+        <th>Usuário</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Localização</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.login }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email? user.email: 'Não informado' }}</td>
+        <td>{{ user.location }}</td>
+        <td>
+          <button id="edit" >Editar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+ </div>

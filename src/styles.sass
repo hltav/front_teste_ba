@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+$font-stack: Roboto, sans-serif
+$primary-color:#444 
+$secondary-color:#999
+
+body
+    padding:0
+    margin:0
+    font-family: $font-stack
+    box-sizing: border-box
+ul
+    list-style: none
+a
+    text-decoration: none
+    color: $primary-color
+    transition:0.4s
+
+a:hover
+    color:$secondary-color
+
+
+.myform
+    width: 450px
+    margin: 0 auto
+
+    .formGroup
+        display: flex
+        flex-direction: column
+        margin-bottom: 1em
