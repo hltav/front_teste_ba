@@ -49,15 +49,4 @@ export class SearchUsersFormComponent {
    
 }
   
-// try {
-//   const response = await lastValueFrom(this.databaseService.getData());
-//   if (response) {
-//     alert('Usuário existente.');
-//   } else {
-//     await lastValueFrom(this.databaseService.postData({ username }));
-//     alert('Cadastro realizado com sucesso!');
-//   }
-// }catch (error) {
-//   console.error(error, 'Serviço Indisponível!');
-// }
-// }
+

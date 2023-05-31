@@ -7,18 +7,29 @@
         <th>Usuário</th>
         <th>Nome</th>
         <th>Email</th>
+        <th class="viewlocation"></th>
         <th>Localização</th>
-        <th></th>
+        <th ></th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let user of users">
-        <td>{{ user.login }}</td>
+        <td>{{ user.username }}</td>
         <td>{{ user.name }}</td>
         <td>{{ user.email? user.email: 'Não informado' }}</td>
+        <td class="viewlocation">
+          <a href="">
+            <img src="../../../../assets/images/earthiconpurpple.svg" alt="realLocation">
+          </a>
+        </td>
         <td>{{ user.location }}</td>
-        <td>
-          <button id="edit" >Editar</button>
+        <td class="editdelete">
+          <button  type="" (click)="openModal()">
+            <img src="../../../../assets/images/editicon.svg" alt="Editar Usuários">
+          </button>
+          <button  type="submit">
+            <img src="../../../../assets/images/deleteicon.svg" alt="">
+          </button>
         </td>
       </tr>
     </tbody>

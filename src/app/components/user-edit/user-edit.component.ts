@@ -1,18 +1,23 @@
+import { DatabaseService } from './../../services/database.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DatabaseService } from 'src/app/services/database.service';
+import { ModalController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-user-edit',
   templateUrl: './user-edit.component.html',
-  styleUrls: ['./user-edit.component.sass']
+  styleUrls: ['./user-edit.component.sass'],
+  providers:[ModalController]
 })
 export class UserEditComponent implements OnInit {
   userForm: FormGroup | undefined;
 
+  users: any
+
   
   
-    constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService) { }
+    constructor(private formBuilder: FormBuilder,  private modalController: ModalController, private databaseService: DatabaseService) { }
   
     ngOnInit() {
       this.userForm = this.formBuilder.group({
@@ -23,13 +28,17 @@ export class UserEditComponent implements OnInit {
       });
     }
     
-    // saveUser() {
-      
-    //   const updatedUser = this.userForm.value;
-            
+
+    closeModal() {
+      this.modalController.dismiss();
+    }
   
-    //         this.databaseService.navigate(['/users']);
-    // }
+    saveEdition() {
+      
+      this.modalController.dismiss(this.users);
+    }
+    
+   
   }
   
 

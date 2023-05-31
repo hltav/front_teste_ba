@@ -1,7 +1,6 @@
-import { Input, NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -13,6 +12,7 @@ import { FloatingDataComponent } from './components/floating-data/floating-data.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgFor } from '@angular/common';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { AngularDelegate } from '@ionic/angular';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
     SearchUsersFormComponent,
     FloatingDataComponent,
     UserEditComponent,
-   
+    
+       
   ],
   imports: [
     BrowserModule,
@@ -31,10 +32,12 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    NgFor
+    NgFor,
+    
   
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [AngularDelegate],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
