@@ -22,7 +22,7 @@
             <img src="../../../../assets/images/earthiconpurpple.svg" alt="realLocation">
           </a>
         </td>
-        <td>{{ user.location }}</td>
+        <td>{{ user.location? user.location: 'Não Informada' }}</td>
         <td class="editdelete">
           <button  type="" (click)="openModal()">
             <img src="../../../../assets/images/editicon.svg" alt="Editar Usuários">

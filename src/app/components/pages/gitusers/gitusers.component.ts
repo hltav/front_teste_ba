@@ -19,15 +19,14 @@ export class GitusersComponent implements OnInit {
     this.databaseService.getData().subscribe(data => {
       this.users = data;
 
-      console.log(data)
-    });
+     });
   }
 
   async openModal() {
     const modal = await this.modalController.create({
       component: UserEditComponent,
       componentProps: {
-        usuario: this.users
+        user: this.users
       }
       
     });
