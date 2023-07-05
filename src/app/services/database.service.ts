@@ -6,22 +6,24 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DatabaseService {
-  private baseUrl = 'http://localhost:8000'; 
+  private baseUrl = 'http://localhost:8000/api/';
 
   constructor(private http: HttpClient) { }
 
   public getData(): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/my_git_users `);
+    return this.http.get<any>(`${this.baseUrl}users`);
   }
 
   public postData(users: any): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/my_git_users`, users);
-  }
-  public putData(id: string, users: any): Observable<any> {
-    return this.http.put<any>(`${this.baseUrl}/my_git_users/${id}`, users);
+    return this.http.post<any>(`${this.baseUrl}users`, users);
   }
 
-  public deleteData(id: string): Observable<any> {
-    return this.http.delete<any>(`${this.baseUrl}/my_git_users/${id}`);
+  public putData(id: string, users: any): Observable<any> {
+    return this.http.put<any>(`${this.baseUrl}users/${id}`, users);
+  }
+
+  public deleteData(userIndex: any): Observable<any> {
+
+    return this.http.delete<any>(`${this.baseUrl}users/${userIndex}`);
   }
 }

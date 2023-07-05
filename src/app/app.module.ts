@@ -8,11 +8,15 @@ import { GitusersComponent } from './components/pages/gitusers/gitusers.componen
 import { SearchusersComponent } from './components/pages/searchusers/searchusers.component';
 import { SearchUsersFormComponent } from './components/search-users-form/search-users-form.component';
 import { FormsModule } from '@angular/forms';
-import { FloatingDataComponent } from './components/floating-data/floating-data.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgFor } from '@angular/common';
-import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { CommonModule, NgFor } from '@angular/common';
+import { UserEditComponent } from './components/pages/user-edit/user-edit.component';
 import { AngularDelegate } from '@ionic/angular';
+import { ButtonComponent } from './components/button/button.component';
+import { ToastService } from 'angular-toastify';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ModalMapComponent } from './components/modal-map/modal-map.component'
+
 
 @NgModule({
   declarations: [
@@ -21,10 +25,9 @@ import { AngularDelegate } from '@ionic/angular';
     GitusersComponent,
     SearchusersComponent,
     SearchUsersFormComponent,
-    FloatingDataComponent,
     UserEditComponent,
-    
-       
+    ButtonComponent,
+    ModalMapComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,11 +35,12 @@ import { AngularDelegate } from '@ionic/angular';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    CommonModule,
     NgFor,
-    
-  
+    MatDialogModule,
+
   ],
-  providers: [AngularDelegate],
+  providers: [AngularDelegate, ToastService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
