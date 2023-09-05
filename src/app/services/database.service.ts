@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DatabaseService {
-  private baseUrl = 'http://localhost:8000/api/';
+  private baseUrl = 'https://app-ba-api.vercel.app/api/';
 
   constructor(private http: HttpClient) { }
 
