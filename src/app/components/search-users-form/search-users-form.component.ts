@@ -34,8 +34,7 @@ export class SearchUsersFormComponent {
 
   async pushData(username: string) {
     const data = username;
-    console.log(data)
-
+ 
     try {
       const response = await lastValueFrom(this.databaseService.postData(data));
       let timerInterval: ReturnType<typeof setInterval>;
