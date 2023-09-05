@@ -11,7 +11,6 @@ export class GithubUserService {
   constructor(public http: HttpClient) { }
 
   getUser(username: string) {
-    console.log(username)
     const url = `${this.apiUrl}${username}`;
     return this.http.get(url);
   }
